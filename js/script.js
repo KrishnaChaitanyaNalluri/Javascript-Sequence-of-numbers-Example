@@ -12,7 +12,7 @@ var prepareTheTextFile = function(results){
     //Iterating through CSV Results
     var range1 = new Range();
     rangeArray = [];
-    for(i=0;i<data.length;i++){
+    for(var i=0;i<data.length;i++){
       var rangeLocalAttribute = {};
         if(data[i].length > 0){
             let sequenceArray = data[i][0].split(',');
@@ -33,10 +33,8 @@ var prepareTheTextFile = function(results){
 }
 // code to output the text file
 var outputTextFileDownload = function (objArray, file_Name, target) {
-  console.log(objArray);
      var str = '', line = "" ; 
       for (var i = 0; i < objArray.length; i++) {
-        // for(var j=0; j<objArray[i]; ++j){
             str += JSON.stringify(objArray[i])+'\r\n';
       }
       if (navigator.msSaveBlob) { // For IE10
